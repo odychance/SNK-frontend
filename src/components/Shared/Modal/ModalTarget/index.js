@@ -1,0 +1,1 @@
+export { ModalTarget } from './ModalTarget'

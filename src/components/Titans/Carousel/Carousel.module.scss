@@ -1,0 +1,103 @@
+@import '/src/scss/index.scss';
+
+.containerTitans {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    // background-color: red;
+
+    > h1 {
+        position: absolute;
+        top: 5%;
+        text-transform: uppercase;
+        font-family: Sharpie;
+        font-size: 2rem;
+        font-weight: light;
+    }
+    
+    > div {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 80%;
+        overflow: scroll;
+
+        // background-color: green;
+        // display: grid;
+        // grid-template-columns: repeat(3, 1fr);
+        
+        gap: 2%;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+
+        // border: 2px solid red;
+
+
+        > div {
+            object-fit: cover;
+            overflow: hidden;
+            display: flex;
+
+            justify-content: center;
+            // align-items: center;
+            position: relative;
+
+            padding: .5rem;
+            border: 1.5px solid transparent;
+
+            width: 32%;
+            height: 32%;
+            
+            transition: .3s;
+            animation-duration: 1.5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            
+            > img {
+                transition: .3s;
+                width: 100%;
+            }
+            
+            > h3 {
+                transition: .3s;
+                opacity: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 80%;
+                font-family: panchang;
+            }
+            
+            &:hover {
+                animation-name: hoverTitan;
+                cursor: pointer;
+                border-color: $text-primary;
+
+                > img {
+                    opacity: .4;
+                    scale: .95;
+                }
+                
+                > h3 {
+                    opacity: 1;
+                }
+
+            }
+        }
+    }
+}
+
+@keyframes hoverTitan {
+    0% { border-color: transparent;}
+    50% { border-color: $text-primary;}
+    100% { border-color: transparent;}
+}

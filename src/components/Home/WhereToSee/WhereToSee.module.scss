@@ -1,0 +1,70 @@
+@import '/src/scss/index.scss';
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    > h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-family: Tanker;
+        font-style: oblique;
+        font-size: 70px;
+        font-weight: 100;
+    }
+
+    > .target {
+        width: 70%;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin: 5rem;
+        // background-color: red;
+        
+        > img {
+            transition: all .3s;
+            // position: absolute;
+            // top: 50%;
+            // left: 50%;
+            // transform: translate(-50%, -50%);
+            width: 100%;
+            height: 90vh;
+            border-radius: 15px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        > a {
+            text-decoration: none;
+            color: $text-primary;
+        }
+        
+        > a > h2 {
+            transition: all .3s;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: Panchang;
+            font-size: 50px;
+            font-weight: 300;
+            text-align: center;
+            width: 100%;
+            opacity: 0;
+        }
+
+        &:hover {
+            > img {
+                opacity: .2;
+            }
+
+            > a > h2 {
+                opacity: 1;
+            }
+        }
+    }
+
+}

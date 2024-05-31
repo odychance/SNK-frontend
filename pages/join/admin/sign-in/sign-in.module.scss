@@ -1,0 +1,16 @@
+.signInContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bgImg {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 150vh;
+    object-fit: cover;
+    z-index: -1;
+}

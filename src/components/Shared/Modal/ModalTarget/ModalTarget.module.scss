@@ -1,0 +1,134 @@
+@import '/src/scss/index.scss';
+
+.containerModalTarget {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: $background-transparent-normal;
+    opacity: 0;
+    pointer-events: none;
+    // display: none;
+}
+
+.modalActive {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.containerTarget {
+    overflow: scroll;
+    // object-fit: contain;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 70%;
+    border: 2px solid $text-secondary;
+    border-radius: 10px;
+    background-color: $background-primary;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+    &:hover {
+        > img {
+            
+            opacity: .4;
+            border-radius: 50%;
+            width: 45%;
+            height: 78.75%;
+        }
+        
+        > div{
+            // object-fit: contain;
+            opacity: 1;
+            
+            > div {
+                > button {
+                    transition: .5s;
+                    opacity: 1;
+                }
+            }
+        }
+
+    }
+    
+    > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        transition: .5s;
+        padding: 1rem;
+
+        position: fixed !important;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    > div {
+        // background-color: red;
+        // margin-top: 10rem;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        opacity: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: .5s;
+
+        // object-fit:fill;
+        
+        > label {
+            z-index: 1;
+            transition: .3s;
+            font-family: panchang;
+            font-size: 20px;
+            text-align: center;
+            // background-color: green;
+        }
+        
+        > h2 {
+            // background-color: blue;
+            z-index: 1;
+            transition: .3s;
+            font-size: 18px;
+            font-family: panchang;
+            font-style: oblique;
+            margin-bottom: .5rem;
+            text-transform: uppercase;
+            text-align: center;
+            
+        }
+    }
+}
+
+.buttonsContainer {
+    z-index: 5;
+    display: flex;
+    gap: 1rem;
+
+    // > button {
+    //     position: fixed;
+    //     top: 0;
+    //     left: 0;
+    //     background-color: gray;
+
+    // }
+}

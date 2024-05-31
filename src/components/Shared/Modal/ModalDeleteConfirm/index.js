@@ -1,0 +1,1 @@
+export { ModalDeleteConfirm } from './ModalDeleteConfirm'

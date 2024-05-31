@@ -1,0 +1,90 @@
+@import '/src/scss/index.scss';
+
+.buttonContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    gap: 5px;
+    transition-duration: 1s;
+
+
+    // ZINDEX
+    z-index: 100;
+    
+    &:hover {
+        cursor: pointer;
+    }
+    
+    > div {
+        width: 20px;
+        height: 1px;
+        background-color: $text-primary;
+        position: absolute;
+        transition-duration: 1s;
+
+    }
+}
+
+.topLine {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+}
+
+.bottomLine {
+    bottom: 30%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+}
+
+.middleLine {
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+
+
+
+.buttonContainerActive {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid $text-primary;
+    gap: 5px;
+    
+    
+    > div {
+        width: 20px;
+        height: 1px;
+        background-color: $text-primary;
+        position: absolute;
+        transition-duration: 1s;
+        top: 50%;
+        left: 50%;        
+    }
+
+    .topLineActive {
+        transform: translate(-50%, -50%) rotate(225deg);
+    }
+    .bottomLineActive {
+        transform: translate(-50%, -50%) rotate(-225deg);
+    }
+    
+    .middleLineActive {
+        background-color: transparent;
+    }
+}

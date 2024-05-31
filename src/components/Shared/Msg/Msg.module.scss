@@ -1,0 +1,21 @@
+@import '/src/scss/index.scss';
+
+.containerMsg {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    background-color: red;
+    padding: 1rem 2.5rem;
+    background-color: $error;
+    border: 1px solid $text-primary;
+    border-radius: 10px;
+    width: 50% !important;
+
+    > h2 {
+        // background-color: blue;
+        width: 100%;
+        text-align: center;
+    }
+    
+}

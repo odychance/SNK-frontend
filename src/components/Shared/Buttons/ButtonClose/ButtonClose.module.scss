@@ -1,0 +1,56 @@
+@import '/src/scss/index.scss';
+
+.closeModal {
+    width: 40px !important;
+    height: 40px !important;
+    background-color: transparent;
+    border: 2px solid $text-primary;
+    position: relative;
+    top: 8% !important;
+    left: 95% !important;
+    transform: translate(-8%, -95%) !important;
+    border-radius: 50%;
+    transition: .3s;
+
+    > div {
+        transition: .8s ease-in-out;
+        
+    }
+
+    &:hover {
+        scale: 1.1;
+
+        > div {
+            &:first-of-type {
+                transform: translate(-50%, -50%) rotate(-135deg);
+            }
+
+            &:last-of-type {
+                transform: translate(-50%, -50%) rotate(135deg);
+            }
+        }
+    }
+}
+
+.leftBar {
+    // transition: .3s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 2px;
+    height: 20px;
+    background-color: $text-primary;
+}
+
+.rightBar {
+    // transition: .3s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 2px;
+    height: 20px;
+    background-color: $text-primary;
+}
+

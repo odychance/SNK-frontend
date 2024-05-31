@@ -1,0 +1,32 @@
+@import '/src/scss/index.scss';
+
+.containerBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $success;
+    border: none;
+    opacity: 1;
+
+    position: relative;
+    top: 0;
+    right: 0å;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    > svg {
+        transition: .3s;
+        width: 50%;
+        z-index: 1;
+    }
+
+    &:hover {
+        > svg {
+            width: 70%;
+        }
+    }
+
+}

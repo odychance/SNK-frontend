@@ -1,0 +1,108 @@
+@import '/src/scss/index.scss';
+
+.container {
+    width: 100vw;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+    padding: 2rem;
+}
+
+.component {
+    width: 100%;
+    height: 20em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    overflow: hidden;
+    border-radius: 10px;
+    border: 0px solid transparent;
+    transition: all .3s;
+    box-shadow: 10px 10px 10px transparent;
+    
+    
+    > img {
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        object-fit: cover;
+        width: 100%;
+        // height: 100%;
+        transform: translate(-50%, -50%);
+        transition: all .3s ease-in-out;
+
+    }
+
+    &:hover {
+        border-color: $text-primary;
+        box-shadow: 5px 5px 15px $text-primary;
+        cursor: pointer;
+        scale: 1.2;
+
+
+        > img {
+            opacity: 0.3;
+        }
+
+        > div {
+            opacity: 1;
+        }
+    }
+}
+
+.tapIndicator {
+    position: relative;
+    margin-top: 10em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: red;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    height: 100%;
+
+    > h2 {
+        font-family: tanker;
+        font-size: 80px;
+        font-weight: 100;
+        // color: $border-secondary;
+        letter-spacing: 20px;
+        // position: absolute;
+        color: $white;
+
+    }
+
+    > img {
+        width: 10em;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: moveUpDown 4s ease-in-out infinite;
+    }
+}
+
+@keyframes moveUpDown {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: 5%;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+.buttonAdd {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+    // align-items: center;
+}

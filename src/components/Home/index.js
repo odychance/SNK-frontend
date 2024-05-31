@@ -1,0 +1,6 @@
+export { CharactersTarget } from './CharactersTarget'
+export { TitansTarget } from './TitansTarget'
+export { MilitaryDivisions } from './MilitaryDivisions'
+export { Summaries } from './Summaries'
+export { AboutAnime } from './AboutAnime'
+export { WhereToSee } from './WhereToSee'

@@ -1,0 +1,84 @@
+@import '/src/scss/index.scss';
+
+.containerModalUpdate {
+    transition: all .3s;
+
+    opacity: 0;
+    pointer-events: none;
+    
+    position: fixed;
+    top: 0;
+    right: 0;
+    // transform: translate(-50%, -50%);
+    background-color: $background-transparent-bold;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    > form {
+        transition: all .3s;
+        scale: 0.7;
+        width: 90%;
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background-color: $background-primary;
+        border: 1px solid $text-secondary;
+        gap: 1rem;
+
+        > h2 {
+            text-transform: uppercase;
+            font-family: panchang;
+        }
+
+        > div {
+            width: 100%;
+            // background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            > label {
+                width: 20%;
+                text-transform: uppercase;
+            }
+
+            > input {
+                width: 60%;
+            }
+        }
+
+    }
+
+    > div {
+        position: absolute;
+
+        &:first-of-type {
+            right: 8% !important;
+            top: 8%;
+            z-index: -1;
+        }
+
+        &:last-of-type {
+            bottom: 4%;
+        }
+    }
+}
+
+.modalUpdateActived {
+    opacity: 1;
+    pointer-events: auto;
+
+    > form {
+        scale: 1;
+    }
+
+}
+

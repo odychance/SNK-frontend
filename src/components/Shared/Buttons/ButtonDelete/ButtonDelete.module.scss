@@ -1,0 +1,76 @@
+@import '/src/scss/index.scss';
+
+.containerBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $error;
+    border: none;
+
+    position: relative;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    > svg {
+        transition: .3s;
+        width: 50%;
+        z-index: 1;
+    }
+
+    &:hover {
+        > svg {
+            width: 70%;
+        }
+    }
+
+}
+
+
+
+// .confirmDelete {
+//     position: fixed;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     width: 50%;
+//     height: 30%;
+//     background-color: $background-transparent-bold;
+//     border: 1px solid $text-primary;
+//     z-index: 2;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     text-align: center;
+//     gap: 2rem;
+//     border-radius: 10px;
+
+//     > div {
+//         position: relative;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         gap: 1rem;
+        
+//         > div {
+//             width: 4rem;
+//             height: 2.2rem;
+//             // background-color: red;
+//             display: flex;
+//             // text-align: center;
+//             justify-content: center;
+//             align-items: center;
+//             border: 1px solid $text-primary;
+//             border-radius: 5px;
+            
+//             > svg {
+//                 width: 30px;
+//             }
+//         }
+//     }
+// }

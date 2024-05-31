@@ -1,0 +1,128 @@
+@import '/src/scss/index.scss';
+
+.containerInfo {
+    // background-color: green;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.emptyTarget {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+
+    > h1 {
+        text-align: center;
+        font-family: panchang;
+        font-style: oblique;
+        font-size: 50px;
+        z-index: 1;
+    }
+
+    > img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        opacity: .3;
+    }
+}
+
+.arrowLeft {
+    width: 100%;
+
+    > svg {
+        width: 50%;
+        animation: movement;
+        animation-timing-function: ease-in-out;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+}
+
+@keyframes movement {
+    0% {transform: translateX(0%);}
+    50% {transform: translateX(100%);}
+    100% {transform: translateX(0%);}
+}
+
+
+
+.containerTitanInfo {
+    position: relative;
+    top: 0 !important;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow-y: scroll;
+    padding: 2rem;
+    
+    
+    &:first-child {
+        position: absolute;
+        top: 2%;
+        right: 2%;
+    }
+    
+    > h1 {
+        text-align: center;
+        font-family: sharpie;
+        font-size: 40px;
+        text-transform: uppercase;
+        margin: 2rem 1rem;
+    }
+    
+    > img {
+        transition: all .5s;
+        width: 100%;
+        height: 70%;
+        border-radius: 20px;
+        margin: 1rem 0;
+        object-fit: cover;
+        box-shadow: 0;
+
+        &:hover {
+            box-shadow: 2px 2px 8px rgba(183, 172, 162, 0.5);
+        }
+    }
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: justify;
+        align-items: justify;
+        gap: 2rem;
+
+        > h1 {
+            text-transform: uppercase;
+            font-size: 1rem;
+            margin: 1rem;
+
+            > p {
+                text-transform: none;
+                margin-top: 1rem;
+                margin-left: 1rem;
+                color: $text-secondary;
+                line-height: 2;
+                font-style: oblique;
+                font-family: stardom;
+                font-size: .8rem;
+            }
+        }
+        
+    }
+}
+
+.ButtonsOptions {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-around;
+    margin-top: 2rem;
+    // background-color: red;
+}

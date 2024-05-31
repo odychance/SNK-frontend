@@ -1,0 +1,105 @@
+@import '/src/scss/index.scss';
+
+.modalContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: $background-transparent-bold;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    opacity: 0;
+    pointer-events: none;
+
+    > form {
+        opacity: 0;
+        transition: 1s;
+
+        background-color: $background-secondary;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) skewY(1.5deg);
+        width: 90%;
+        height: 70%;
+        border-radius: 10px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        > img {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 35%;
+            opacity: .2;
+            z-index: -1;
+        }
+
+        > div {
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            width: 85%;
+            border-bottom: 1px solid transparent;
+            transition: .5s;
+            margin-bottom: 1rem;
+
+            &:hover {
+                border-color: $text-primary;
+            }
+
+            > label {
+                font-family: Stardom;
+                font-size: 16px;
+                text-transform: uppercase;
+                width: 40%;
+                margin-bottom: 1rem;
+
+                :last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+
+            > input {
+                background-color: $border-primary;
+                width: 60%;
+            }
+
+            &:last-of-type {
+                width: 100%;
+                border: none;
+            }
+        }
+    }
+}
+
+.btnCreate {
+    position: relative;
+    top: 10%;
+    left: 0;
+
+    > button {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+    }
+}
+
+.modalActive {
+    opacity: 1;
+    pointer-events: auto;
+
+    > form {
+        opacity: 1;
+    }
+}

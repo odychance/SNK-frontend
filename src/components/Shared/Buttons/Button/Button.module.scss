@@ -1,0 +1,26 @@
+@import '/src/scss/index.scss';
+
+.button {
+    background-color: $text-primary;
+    border: 2px solid $border-primary;
+    border-radius: 5px;
+    padding: .5rem 2rem;
+    margin: 0rem;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    transition: all .3s;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    
+
+
+    &:hover {
+        background-color: $text-primary-hover;
+        border: 2px solid $border-secondary;
+        color: $background-quaternary;
+
+        cursor: pointer;
+    }
+}

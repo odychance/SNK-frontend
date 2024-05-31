@@ -1,0 +1,137 @@
+@import '/src/scss/index.scss';
+
+.charactersContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+
+}
+
+.title {
+    display: flex;
+    width: 150%;
+    margin: -4rem 0 4rem 0;
+}
+
+.charactersTitleBg {
+    color: $text-secondary;
+}
+
+.charactersTitle, .charactersTitleBg {
+    width: 150%;
+    justify-content: justify;
+    align-items: center;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Oswald;
+    font-weight: 600;
+    font-size: 74px;   
+}
+
+.characterContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+    
+    position: relative;
+}
+
+.target {
+    border: 4px solid $text-secondary;
+    margin: .5rem;
+    background-color: $text-secondary;
+    width: 20%;
+    max-width: 18%;
+    height: calc(100vh - 100px);
+    position: relative;
+    border-radius: 15px 0 15px 0;
+
+    opacity: 0;
+    
+    object-fit: cover;
+    overflow: hidden;
+    transition: all .3s;
+    cursor: pointer;
+    transition: all .3s;
+    
+    > div {
+        transition: all 1s;
+        width: 100%;
+        height: 100vh;
+    }
+    
+    &:hover {
+        
+        background-color: $background-transparent-light;
+        border-color: $text-secondary-hover;
+        
+        > div {
+
+            .charactersName {
+                color: $text-secondary;
+                opacity: .2;
+            }
+
+            .imageCharacter {
+                transition: all .5s;
+                scale: .85;
+            }
+
+            .hoverName {
+                opacity: 1;
+                font-size: 65px;
+
+            }
+
+        }
+    }
+}
+
+.charactersName {
+    transition: all .3s;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    text-align: justify;
+    color: $background-transparent-bold;
+    font-family: Panchang;
+    word-wrap: break-word;
+    font-size: 110px;
+    line-height: 1.3;
+    opacity: .5;
+
+}
+
+
+.imageCharacter {
+    transition: all .3s;
+    position: absolute;
+    top: 56%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    scale: .8;
+    width: auto;
+    
+}
+
+.hoverName {
+    transition: .3s;
+    padding-left: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    color: $text-primary;
+    font-size: 10px;
+    text-align: left;
+    word-wrap: break-word;
+    opacity: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}

@@ -1,0 +1,1 @@
+export { OpeningS1 } from './OpeningS1'

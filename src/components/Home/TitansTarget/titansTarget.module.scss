@@ -1,0 +1,110 @@
+@import '/src/scss/index.scss';
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titansContainer {
+    width: 100vw;
+    margin-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    // background-color: red;
+}
+.titansTitle {
+    padding: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Panchang;
+    font-weight: 700;
+    font-size: 54px;
+    background-color: $text-secondary;
+    width: 100%;
+    margin-bottom: 4rem;
+    opacity: 0;
+    z-index: 1;
+}
+
+//TARGET
+
+.backroungImage {
+    position: absolute;
+    top: 300px;
+    left: 0;
+    height: calc(100% - 300px);
+    width: 100%;
+    object-fit: cover;
+    opacity: .2;
+    z-index: -1;
+}
+
+.containerTarget {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    max-width: 1425px;
+    object-fit: contain;
+
+}
+
+
+.skewImage {
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    transform: skew(-5deg);
+    position: relative;
+    
+    &:hover {
+        .targetImage {
+            opacity: 1;
+            scale: 1.1;
+        }
+        
+        .titanName {
+            color: $text-secondary;
+            font-size: 75px;
+            margin-right: 8rem;
+        }
+    }
+}
+
+.titanName {
+    z-index: 1;
+    color: transparent;
+    font-family: Sharpie;
+    font-size: 50px;
+    position: absolute;
+    bottom: -15%;
+    right: -10%;
+    transform: rotate(-5deg);
+    transition: all .3s;
+}
+
+.targetImage {
+    transition: all .3s;
+    opacity: 0.6;
+    transform: rotate(-5deg);
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.refButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    height: 70px;
+    width: 300px;
+    cursor: pointer;
+}

@@ -1,0 +1,25 @@
+@import '/src/scss/index.scss';
+
+.watchMore {
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    margin: 4rem auto;
+    padding: 1rem ;
+    background-color: transparent;
+    border-radius: 0;
+    font-family: Oswald;
+    font-weight: 400;
+    font-size: 24px;
+    color: $text-primary;
+    transition: .5s;
+    cursor: pointer;
+    
+    &:hover {
+        border-radius: 0px 50px 0 50px;
+        color: $background-primary;
+        background-color: $text-primary;
+        width: 300px;
+    }
+    
+}

@@ -1,0 +1,131 @@
+@import '/src/scss/index.scss';
+
+.modalContainer {
+    z-index: 10;
+    position: fixed ;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-transparent-bold;
+
+    opacity: 0;
+    pointer-events: none;
+
+    > div {
+        position: relative;
+        width: 60% !important;
+        height: 40%;
+        background-color: $background-primary;
+        border-radius: 20px;
+        border: 2px solid $text-primary;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        .containerCenter {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            > h2 {
+                margin-top: -2rem;
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 24px;
+
+                &:last-of-type {
+                    opacity: 0;
+                }
+            }
+
+            > svg {
+                margin-top: -5rem;
+                width: 15%;
+
+                &:last-of-type {
+                    opacity: 0;
+                }
+            }
+            
+        }
+
+        .containerButtons {
+            width: 100%;
+            position: absolute;
+            bottom: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+
+            > div {
+                transition: .3s;
+                opacity: .8;
+                display: flex;
+                justify-content: center;
+
+                > button {
+                        width: 90%;
+                }
+
+                &:first-of-type > button {
+                    background-color: $success;
+                    border-color: $success;
+                }
+    
+                &:last-of-type > button {
+                    background-color: $error;
+                    border-color: $error;
+                }
+
+                &:hover {
+                    scale: 1.1;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.modalActive {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.succesDelete {
+    > svg {
+        transition: .5s;
+        margin-top: -6.25rem !important;
+
+        &:first-of-type {
+            opacity: 0 !important;
+        }
+        
+        &:last-of-type {
+            opacity: 1 !important;
+        }
+    }
+
+    > h2 {
+        margin-top: 0rem !important;
+        transition: .5s;
+
+        &:first-of-type {
+            opacity: 0;
+        }
+
+        &:last-of-type {
+            opacity: 1 !important;
+        }
+    }
+
+}

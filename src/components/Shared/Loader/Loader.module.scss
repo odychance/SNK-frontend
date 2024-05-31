@@ -1,0 +1,51 @@
+@import '/src/scss/index.scss';
+
+.containerLoader {
+    width: 100vw;
+    height: 150vh;
+    background-color: $text-secondary;
+    position: absolute;
+    z-index: 100;
+    transform: skewY(-10deg);
+        
+    > div {
+        background-color: $error;
+        width: 40%;
+        height: 40%;
+        border-radius: 50%;
+        position: absolute;
+        top:22%;
+        left:30%;
+        transform: translate(22%, 30%) skewY(10deg);
+        transition: .5s;
+
+        animation-name: spin;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        
+        &:hover {
+            animation-duration: .5s;
+
+        }
+    }
+    
+    > img {
+        width: 30%;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%) skewY(10deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+

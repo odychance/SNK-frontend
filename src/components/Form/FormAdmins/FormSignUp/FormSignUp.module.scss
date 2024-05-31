@@ -1,0 +1,68 @@
+@import '/src/scss/index.scss';
+
+.containerForm {
+    width: 40%;
+    // height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $background-transparent-normal;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    padding: 2rem ; 
+    border-radius: 10px;
+    transition: all .3s;
+
+    > h1 {
+        text-align: center;
+        text-transform: uppercase;
+        margin: 1rem;
+
+    }
+
+    &:hover {
+        background-color: $background-transparent-bold;
+    }
+}
+
+.elements {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: .5rem;
+    width: 80%;
+}
+
+.adminPassBtn {
+    cursor: not-allowed;
+    pointer-events: none;
+
+    > button {
+        opacity: 0.5;
+    }
+}
+
+.goToLoginAdm {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .3s;
+    background-color: $background-transparent-normal;
+    padding: 1rem 3rem;
+    border-radius: 15px;
+
+    > p {
+        color: $white;
+        text-transform: uppercase;
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
+.goToLoginAdm:hover {
+    background-color: $background-transparent-bold;
+}

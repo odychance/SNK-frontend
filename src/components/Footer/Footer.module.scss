@@ -1,0 +1,130 @@
+@import '/src/scss/index.scss';
+
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 12rem;
+    background-color: $background-transparent-light;
+    margin-bottom: -20px;
+    padding: 1rem;
+    border-top: 2px solid $text-secondary;
+    transition: .3s ease;
+    
+    &:hover {
+        border-color: $text-primary;
+
+        > .bottomContainer > div {
+            transition: all .3s;
+            width: 90%;    
+        }
+    }
+}
+
+.topContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+}
+
+.footerLeft {
+    font-size: 32px;
+    font-family: Panchang;
+    font-weight: 500;
+    transition: .3s ease;
+    color: $text-secondary;
+    
+    &:hover {
+        margin-left: 1rem;
+        font-size: 36px;
+        font-weight: 700;
+        color: $text-primary;
+    }
+}
+
+.footerRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $text-secondary;
+    width: 40% !important;
+    text-align: center ;
+    // padding: 2rem;
+    
+}
+
+.contactUs {
+    display: flex;
+    gap: 1rem;    
+    
+    > div {
+        padding: 4px;
+        
+        > a {
+            color: $text-secondary;
+            text-decoration: none;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: .3s;
+        }
+        
+        &:hover {
+            > a {
+                color: $text-primary;
+            }
+            
+            > a >img {
+                transition: all .3s ease;
+                width: 30px;
+            }
+        }
+        
+        &:nth-child(2) > a > img {
+            background-color: $white;
+            border-radius: 50%;
+            transition: all .3s ease;
+        }
+        
+        > a >img {
+            transition: all .3s ease;
+            margin-left: .2rem;
+            width: 0px;
+            height: 30px;
+        }
+    }
+}
+
+.bottomContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $text-secondary;
+    font-size: 13px;
+    padding: 1rem;
+    padding-bottom: 1rem;
+    transition: all .3s;
+    
+    > div {
+        border-top: 1px solid $text-secondary;
+        transition: all .3s;
+        width: 0;
+        
+    }
+    
+    > h2 {
+        padding-top: 1rem;
+        font-size: 13px;
+        margin-bottom: 1rem; 
+        text-align: center; 
+    }
+}
