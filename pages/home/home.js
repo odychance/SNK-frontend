@@ -12,7 +12,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
-const homePage = () => {
+const HomePage = () => {
 
   const { data: dataUser, loading: loadingUser } = useQuery(ApolloQuerys.GET_USER)
   const { data: dataAdmin, loading: loadingAdmin } = useQuery(ApolloQuerys.GET_ADMIN)
@@ -90,4 +90,4 @@ const homePage = () => {
 )
 }
 
-export default homePage
+export default HomePage

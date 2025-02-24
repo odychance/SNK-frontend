@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react'
 import { Forms } from '@/components/Form'
 import { gsap } from 'gsap'
 
-const signInAdmin = () => {
+const SignInAdmin = () => {
 
   const imgRef = useRef(null)
 
@@ -35,4 +35,4 @@ const signInAdmin = () => {
   )
 }
 
-export default signInAdmin
+export default SignInAdmin

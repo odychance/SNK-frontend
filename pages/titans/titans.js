@@ -12,7 +12,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const titans = () => {
+const Titans = () => {
 
     
     const { data: dataUser, loading: loadingUser } = useQuery(ApolloQuerys.GET_USER)
@@ -54,4 +54,4 @@ const titans = () => {
     )
 }
 
-export default titans
+export default Titans

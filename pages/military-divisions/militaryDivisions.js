@@ -9,7 +9,7 @@ import { ApolloQuerys } from "@/Apollo"
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 
-const militaryDivisions = () => {
+const MilitaryDivisions = () => {
 
     const { data: dataAdmin, loading: loadingAdmin } = useQuery(ApolloQuerys.GET_ADMIN)
     const admin = dataAdmin?.getAdmin?.admin
@@ -64,4 +64,4 @@ const militaryDivisions = () => {
     )
 }
 
-export default militaryDivisions
+export default MilitaryDivisions

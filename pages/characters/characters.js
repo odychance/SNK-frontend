@@ -10,7 +10,7 @@ import { ApolloQuerys } from "@/Apollo"
 
 import { gsap } from 'gsap'
 
-const characters = () => {
+const Characters = () => {
 
     const { data: dataUser, loading: loadingUser } = useQuery(ApolloQuerys.GET_USER)
     const { data: dataAdmin, loading: loadingAdmin } = useQuery(ApolloQuerys.GET_ADMIN) 
@@ -54,4 +54,4 @@ const characters = () => {
     )
 }
 
-export default characters
+export default Characters

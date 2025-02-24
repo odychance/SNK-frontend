@@ -2,7 +2,7 @@ import styles from './sign-up.module.scss'
 import { Forms } from '@/components/Form'
 import { Videos } from '@/components/VideoComponents'
 
-const signUp = () => {
+const SignUp = () => {
   return (
     <div className={styles.container}>
       <div className={styles.containerVideo}>
@@ -15,4 +15,4 @@ const signUp = () => {
   )
 }
 
-export default signUp
+export default SignUp

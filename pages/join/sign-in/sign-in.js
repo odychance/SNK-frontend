@@ -2,7 +2,7 @@ import styles from './sign-in.module.scss'
 import { Forms } from '@/components/Form'
 import {Videos} from '@/components/VideoComponents'
 
-const signIn = () => {
+const SignIn = () => {
   return (
     <div className={styles.container}>
       <div className={styles.containerVideo}>
@@ -14,4 +14,4 @@ const signIn = () => {
   )
 }
 
-export default signIn
+export default SignIn
