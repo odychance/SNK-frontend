@@ -7,13 +7,11 @@ import { useQuery } from '@apollo/client'
 import { ApolloQuerys } from "@/Apollo"
 
 import gsap from 'gsap'
-import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 
-const MilitaryDivisions = () => {
+const MilitaryDivisionsPage = () => {
 
     const { data: dataAdmin, loading: loadingAdmin } = useQuery(ApolloQuerys.GET_ADMIN)
     const admin = dataAdmin?.getAdmin?.admin
-
     const containerRef = useRef(null)
     const titleRef = useRef()
     const imageRef = useRef(null)
@@ -64,4 +62,4 @@ const MilitaryDivisions = () => {
     )
 }
 
-export default MilitaryDivisions
+export default MilitaryDivisionsPage
