@@ -4,6 +4,7 @@ import anim from './Target.anim'
 import { Separator, LoaderTarget, Modal, Buttons } from '@/components/Shared'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import Image from 'next/image'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -60,7 +61,7 @@ const Target = ({data, dataUser, loading, dataAdmin, loadingAdmin}) => {
   
                   <div onClick={openCloseTargetModal}>
   
-                    <img src={data.picture} alt={data.name} className={styles.imgCharacter} />
+                    <Image src={data.picture} alt={data.name} className={styles.imgCharacter} width={100} height={100} unoptimized />
                     
                     <div>
   

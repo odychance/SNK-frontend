@@ -2,6 +2,7 @@ import styles from './sign-up.module.scss'
 import { useEffect, useRef }from 'react'
 import { Forms } from '@/components/Form'
 import { gsap } from 'gsap'
+import Image from 'next/image'
 
 const SignUpAdmin = () => {
 
@@ -25,9 +26,9 @@ const SignUpAdmin = () => {
 
   return (
     <div className={styles.mainContainer}>
-
-      <img src="https://images2.alphacoders.com/606/606224.png" className={styles.backgroundImage} ref={imgRef}/>
-
+      <div className={styles.backgroundImage} ref={imgRef}>
+        <Image src="https://images2.alphacoders.com/606/606224.png" alt="imagen" layout='fill' objectFit='cover' />
+      </div>
       <Forms.FormAdmins.FormSignUp />
         
     </div>

@@ -2,15 +2,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
 
 .bgImg {
     position: absolute;
-    top: 70%;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100vw;
-    height: 150vh;
+    transform: translate(-50%, 0%);
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: -1;
 }

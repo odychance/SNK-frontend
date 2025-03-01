@@ -7,6 +7,7 @@ import { useQuery } from '@apollo/client'
 import { ApolloQuerys } from "@/Apollo"
 
 import gsap from 'gsap'
+import Image from 'next/image'
 
 const MilitaryDivisionsPage = () => {
 
@@ -53,7 +54,7 @@ const MilitaryDivisionsPage = () => {
                     <h1>MILITARY</h1>
                     <h1>DIVISIONS</h1>
                 </div>
-                <img src='/Media/Images/Background-Img1.webp' alt='background image' ref={imageRef} />
+                <Image src='/Media/Images/Background-Img1.webp' alt='background image' ref={imageRef} fill unoptimized />
             </div>
 
             <MilitaryDivisions admin={admin}/>

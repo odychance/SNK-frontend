@@ -4,6 +4,7 @@ import { Buttons } from '@/components/Shared'
 import anim from './CharactersTarget.anim'
 import animTarget from './CharactersTarget.animTarget'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const CharactersTarget = () => {
 
@@ -42,7 +43,7 @@ const CharactersTarget = () => {
                         <Link href={'/characters'}>
                             <h2 className={styles.charactersName}>{character.name} <br/>{character.lastname}</h2>
                             <h3 className={styles.hoverName}>{character.name} {character.lastname}</h3>
-                            <img src={character.image} alt="Prueba" className={styles.imageCharacter}/>
+                            <Image src={character.image} alt="Prueba" className={styles.imageCharacter}  width={100} height={100} unoptimized/>
                         </Link>
                     </div>
                 </div>

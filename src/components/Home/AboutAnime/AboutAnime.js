@@ -4,6 +4,7 @@ import { Buttons } from '@/components/Shared'
 import Link from 'next/link'
 import anim from './AboutAnime.anim'
 import animTitle from './AboutAnime.animTitle'
+import Image from 'next/image'
 
 const AboutAnime = ({data, loading }) => {
 
@@ -25,7 +26,7 @@ const AboutAnime = ({data, loading }) => {
                 <div className={styles.targetContainer} ref={aboutContainerRef}>
                     {data.getBackOfs.map( target => (
                         <div className={styles.target} key={target.id}>
-                                <img src={target.imgRef} />
+                                <Image src={target.imgRef} width={100} height={500} alt="image" unoptimized/>
         
                                 <div className={styles.textContainer}>
                                     <h2>{target.title}</h2>

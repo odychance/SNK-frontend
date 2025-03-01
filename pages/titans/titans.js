@@ -9,6 +9,7 @@ import { ApolloQuerys } from '@/Apollo'
 
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import Image from 'next/image'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -41,10 +42,10 @@ const TitansPage = () => {
         <Layout>
             <div className={styles.titansContainer} ref={animRef}>
                 <h1>TITANS</h1>
-                <img src="/Media/Images/Historia-de-Ymir-Fritz.webp" className={styles.img1}/>
+                <Image src="/Media/Images/Historia-de-Ymir-Fritz.webp" className={styles.img1} width={100} height={100} unoptimized alt="imagen"/>
 
                 <div>
-                    <img src="/Media/Images/ymir-fritz-fundadora.webp" className={styles.img2}/>
+                    <Image src="/Media/Images/ymir-fritz-fundadora.webp" className={styles.img2} width={100} height={100} unoptimized alt="imagen"/>
                 </div>
             </div>
 

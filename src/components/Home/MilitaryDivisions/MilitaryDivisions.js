@@ -4,6 +4,7 @@ import { Separator, Buttons } from '@/components/Shared'
 import animTitle from './MilitaryDivisions.animTitle'
 import animDivisions from './MilitaryDivisions.animDivisions'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const MilitaryDivisions = () => {
 
@@ -24,7 +25,7 @@ const MilitaryDivisions = () => {
             <h1 className={styles.title}>What military unit do you prefer?</h1>
         </div>
 
-        <img src="/Media/Images/snk-military-divisions/backgroundImg.png" className={styles.backgroundImg}/>
+        <Image src="/Media/Images/snk-military-divisions/backgroundImg.png" className={styles.backgroundImg}  fill alt="image" unoptimized/>
 
         <div className={styles.divisionTarget}>
             <div className={styles.scoutingLegion} ref={scoutingLegionRef}>

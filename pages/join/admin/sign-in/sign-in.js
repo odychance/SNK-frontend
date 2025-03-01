@@ -1,7 +1,10 @@
+"use client"
+
 import styles from './sign-in.module.scss'
 import React, { useEffect, useRef } from 'react'
 import { Forms } from '@/components/Form'
 import { gsap } from 'gsap'
+import Image from 'next/image'
 
 const SignInAdmin = () => {
 
@@ -27,7 +30,7 @@ const SignInAdmin = () => {
   return (
     <div className={styles.signInContainer}>
 
-      <img src="https://images.alphacoders.com/934/934847.jpg" className={styles.bgImg} ref={imgRef}/>
+      <Image src="https://images.alphacoders.com/934/934847.jpg" className={styles.bgImg} ref={imgRef} width="100" height="100" unoptimized/>
       
       <Forms.FormAdmins.FormSignIn />
 
