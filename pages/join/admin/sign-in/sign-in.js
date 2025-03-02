@@ -29,11 +29,10 @@ const SignInAdmin = () => {
 
   return (
     <div className={styles.signInContainer}>
-
-      <Image src="https://images.alphacoders.com/934/934847.jpg" className={styles.bgImg} ref={imgRef} width="100" height="100" unoptimized/>
-      
+      <div className={styles.bgImg} ref={imgRef}>
+        <Image src="https://images.alphacoders.com/934/934847.jpg" alt="imagen" layout='fill' objectFit='cover'/>
+      </div>
       <Forms.FormAdmins.FormSignIn />
-
     </div>
   )
 }

@@ -30,7 +30,6 @@ const SignUpAdmin = () => {
         <Image src="https://images2.alphacoders.com/606/606224.png" alt="imagen" layout='fill' objectFit='cover' />
       </div>
       <Forms.FormAdmins.FormSignUp />
-        
     </div>
   )
 }
