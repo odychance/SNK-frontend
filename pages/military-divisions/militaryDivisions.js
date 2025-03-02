@@ -17,6 +17,8 @@ const MilitaryDivisionsPage = () => {
     const titleRef = useRef()
     const imageRef = useRef(null)
 
+    const isLoaded = !loadingAdmin
+    
     useEffect(() => {
         const title = titleRef?.current?.children
         const img = imageRef?.current
@@ -41,9 +43,7 @@ const MilitaryDivisionsPage = () => {
             ease: "power4.easeInOut"
         })
 
-    }, [!loadingAdmin])
-
-
+    }, [isLoaded])
 
   return (
     <>
