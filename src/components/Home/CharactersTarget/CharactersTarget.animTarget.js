@@ -6,10 +6,11 @@ gsap.registerPlugin(ScrollTrigger)
 const animTarget = ({targetRef}) => {
     const target = targetRef.current.children
 
-    gsap.fromTo(target, {
+    gsap.set(target, {
         yPercent: 60,
         opacity: 0,
-    }, {
+    })
+    gsap.to(target, {
         yPercent: 0,
         opacity: 1,
         stagger: { each: 1, from: "center"},

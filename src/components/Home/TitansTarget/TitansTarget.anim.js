@@ -6,10 +6,11 @@ gsap.registerPlugin(ScrollTrigger)
 const anim = ({titleRef}) => {
     const title = titleRef.current
 
-    gsap.fromTo(title, {
+    gsap.set(title, {
         scale: 0,
         opacity: 0
-    }, {
+    })
+    gsap.to(title, {
         scale: 1,
         opacity: 1,
         scrollTrigger: {
@@ -20,7 +21,6 @@ const anim = ({titleRef}) => {
             ease: "power4.easeInOut",
         }
     })
-
 }
 
 export default anim

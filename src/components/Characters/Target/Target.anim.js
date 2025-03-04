@@ -1,24 +1,19 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { LoaderTarget } from "@/components/Shared";
-import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger)
 
 const anim = ({targetRef}) => {
-
-    // useEffect(() => {
 
     if(targetRef.current?.children !== undefined) {
 
         const target = [...targetRef.current?.children]
         
         target.forEach( (el, i) => {
-          gsap.from(el, {
+          gsap.set(el, {
             x: i % 2 === 0 ? -400 : 400,
-            // opacity: 0,
           })
-    
           gsap.to(el, {
             x: 0,
             opacity: .5,
@@ -31,11 +26,6 @@ const anim = ({targetRef}) => {
               scrub: true,
               toggleActions: "play complete reverse complete",
               ease: "power1.easeOut",
-            //   markers: {
-            //     startColor: "blue",
-            //     endColor: "blue",
-            //     fontSize: "24px"
-            //   }
             }
           })
         })
@@ -43,9 +33,6 @@ const anim = ({targetRef}) => {
     } else {
         <LoaderTarget />
     }
-
-    // }, [targetRef.current?.children !== undefined])
-
 }
 
 export default anim

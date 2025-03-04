@@ -4,13 +4,13 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger)
 
 const animTitle = ({titleRef}) => {
-
     const title = titleRef.current
 
-    gsap.fromTo(title, {
+    gsap.set(title, {
         opacity: 0,
         x: -100,
-    }, {
+    })
+    gsap.to(title, {
         opacity: 1,
         x: 0,
         scrollTrigger: {
@@ -20,7 +20,6 @@ const animTitle = ({titleRef}) => {
             scrub: true,
         }
     })
-
 }
 
 export default animTitle

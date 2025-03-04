@@ -8,8 +8,9 @@ const anim = ({sketchTarget, refOpacity1, refOpacity2}) => {
     const sketch = sketchTarget.current
     const opacity1 = refOpacity1.current
     const opacity2 = refOpacity2.current
+    const targets = [opacity1, opacity2].filter(el => el)
 
-    gsap.fromTo(sketch, {
+    gsap.set(sketch, {
         opacity: 0.2,
         x: 1500,
         scrollTrigger: {
@@ -18,7 +19,8 @@ const anim = ({sketchTarget, refOpacity1, refOpacity2}) => {
             toggleActions: "play complete reverse complete",
             ease: "power1.easeInOut",
         }
-    },{    
+    })
+    gsap.to(sketch, {    
         opacity: 1,
         x: 0,
         scrollTrigger: {
@@ -28,33 +30,14 @@ const anim = ({sketchTarget, refOpacity1, refOpacity2}) => {
             scrub: true,
             toggleActions: "play complete reverse complete",
             ease: "power1.easeInOut",
-
-            onLeave: () => {                
-                gsap.fromTo(opacity1, {
-                    opacity: 1,
-                }, {
-                    opacity: 0.1,
-                })
-
-                gsap.fromTo(opacity2, {
-                    opacity: 1,
-                }, {
-                    opacity: 0.1,
-                })
+            onLeave: () => {     
+                gsap.set(targets, { opacity: 1 })
+                gsap.to(targets, { opacity: 0.1, stagger: 0.3 }) 
             },
 
             onEnterBack: () => {
-                gsap.fromTo(opacity1, {
-                    opacity: 0.1,
-                }, {
-                    opacity: 1,
-                })
-
-                gsap.fromTo(opacity2, {
-                    opacity: 0.1,
-                }, {
-                    opacity: 1,
-                })
+                gsap.set(targets, { opacity: 0.1 })
+                gsap.to(targets, { opacity: 1, stagger: 0.3 }) 
             }
         },
     })

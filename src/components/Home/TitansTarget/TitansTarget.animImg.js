@@ -7,12 +7,12 @@ const animImg = ({imgRef}) => {
     const img = [...imgRef.current.children]
 
     img.forEach((el, i) => {
-        gsap.fromTo(el, {
-            
+        gsap.set(el, {
             x: i % 2 === 0 ? -800 : 800,
             y: -500,
             opacity: 0,
-        }, {
+        })
+        gsap.to(el, {
             x: 0,
             y: 0,
             opacity: 1,

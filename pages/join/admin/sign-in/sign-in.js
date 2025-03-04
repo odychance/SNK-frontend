@@ -7,24 +7,19 @@ import { gsap } from 'gsap'
 import Image from 'next/image'
 
 const SignInAdmin = () => {
-
   const imgRef = useRef(null)
 
   useEffect(() => {
-
     const el = imgRef.current
-
-    gsap.from( el, {
+    gsap.set( el, {
       scale: 2,
       opacity: 0.5,
     })
-
     gsap.to( el, {
       scale: 1.1,
       opacity: 1,
       duration: 2
     })
-
   }, [])
 
   return (

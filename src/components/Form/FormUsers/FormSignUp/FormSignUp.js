@@ -24,7 +24,6 @@ const FormSignUp = () => {
         validationSchema: ValidationSchema,
         onSubmit: async values => {
             const { name, lastname, email, repeatEmail, password, repeatPassword } = values
-            
             try {
                 if(email !== repeatEmail) {
                     setMsg("Emails fields don't match")
@@ -53,9 +52,6 @@ const FormSignUp = () => {
                     }
                 })
                 router.push('/join/sign-in')
-
-
-                
             } catch (error) {
                 setMsg(error.message)
                 setTimeout(() => {
@@ -69,137 +65,116 @@ const FormSignUp = () => {
         const el = formRef.current
         const ael = aRef.current
 
-        gsap.from(el, {
+        gsap.set(el, {
             x: 200,
             opacity: 0,
-        }),
+        })
+        gsap.set(ael, {
+            x: 200,
+            opacity: 0
+        })
         gsap.to(el ,{
             x: 0,
             opacity: 1,
             duration: 1,
-        }),
-
-        gsap.from(ael, {
-            x: 200,
-            opacity: 0
-        }),
+        })
         gsap.to(ael, {
             x: 0,
             opacity: 1,
             duration: 1,
         })
-
     }, [])
 
   return (
-    <>
-        <form className={styles.containerForm} type="submit" onSubmit={formik.handleSubmit} ref={formRef}>
-            <h1 className={styles.signup}>SIGN UP HERE!</h1>
-
-            <div className={styles.element}>
-                <label>NAME</label>
-                <input
-                    placeholder='First name'
-                    type='text'
-                    id="name"
-                    value={formik.values.name}
-                    onChange={formik.handleChange}
-                />
-
-                {formik.touched.name && formik.errors.name ? <Msg setMsg={true} >All fields required</Msg> : null}
-
-            </div>
-            <div className={styles.element}>
-                <label>LAST NAME</label>
-                <input
-                    placeholder='Last name'
-                    type='text'
-                    id='lastname'
-                    value={formik.values.lastname}
-                    onChange={formik.handleChange}
-                />
-
-                {formik.touched.lastname && formik.errors.lastname ? <Msg>All fields required</Msg> : null}
-
-            </div>
-
-            <div className={styles.element}>
-                <label>EMAIL</label>
-                <input
-                    placeholder='Type your email'
-                    type='email'
-                    id='email'
-                    value={formik.values.email}
-                    onChange={formik.handleChange}
-                />
-
-                {formik.touched.email && formik.errors.email ? <Msg>All fields required</Msg> : null}
-
-            </div>
-
-            <div className={styles.element}>
-                <label>REPEAT EMAIL</label>
-                <input
-                    placeholder='Repeat your email'
-                    type='email'
-                    id='repeatEmail'
-                    value={formik.values.repeatEmail}
-                    onChange={formik.handleChange}
-                />
-
-                {formik.touched.repeatEmail && formik.errors.repeatEmail ? <Msg>All fields required</Msg> : null}
-
-            </div>
-
-            <div className={styles.element}>
-                <label>PASSWORD</label>
-                <input
-                    placeholder='Type your password'
-                    type='password'
-                    id='password'
-                    value={formik.values.password}
-                    onChange={formik.handleChange}
-                />
-
-                {formik.touched.password && formik.errors.password ? <Msg>All fields required</Msg> : null}
-
-            </div>
-
-            <div className={styles.element}>
-                <label>REPEAT PASSWORD</label>
-                <input
-                    placeholder='Repeat your password'
-                    type='password'
-                    id='repeatPassword'
-                    value={formik.values.repeatPassword}
-                    onChange={formik.handleChange}
-                />
-
-                {formik.touched.repeatPassword && formik.errors.repeatPassword ? <Msg>All fields required</Msg> : null}
-            </div>
-
-            {
-                msg || formik.touched.name === '' ? (
-                    <>
-                        <div className={styles.notAllowed}>
-                            <Buttons.Button>Sign up</Buttons.Button>
+        <>
+            <form className={styles.containerForm} type="submit" onSubmit={formik.handleSubmit} ref={formRef}>
+                <h1 className={styles.signup}>SIGN UP HERE!</h1>
+                <div className={styles.element}>
+                    <label>NAME</label>
+                    <input
+                        placeholder='First name'
+                        type='text'
+                        id="name"
+                        value={formik.values.name}
+                        onChange={formik.handleChange}
+                    />
+                    {formik.touched.name && formik.errors.name ? <Msg setMsg={true} >All fields required</Msg> : null}
+                </div>
+                <div className={styles.element}>
+                    <label>LAST NAME</label>
+                    <input
+                        placeholder='Last name'
+                        type='text'
+                        id='lastname'
+                        value={formik.values.lastname}
+                        onChange={formik.handleChange}
+                    />
+                    {formik.touched.lastname && formik.errors.lastname ? <Msg>All fields required</Msg> : null}
+                </div>
+                <div className={styles.element}>
+                    <label>EMAIL</label>
+                    <input
+                        placeholder='Type your email'
+                        type='email'
+                        id='email'
+                        value={formik.values.email}
+                        onChange={formik.handleChange}
+                    />
+                    {formik.touched.email && formik.errors.email ? <Msg>All fields required</Msg> : null}
+                </div>
+                <div className={styles.element}>
+                    <label>REPEAT EMAIL</label>
+                    <input
+                        placeholder='Repeat your email'
+                        type='email'
+                        id='repeatEmail'
+                        value={formik.values.repeatEmail}
+                        onChange={formik.handleChange}
+                    />
+                    {formik.touched.repeatEmail && formik.errors.repeatEmail ? <Msg>All fields required</Msg> : null}
+                </div>
+                <div className={styles.element}>
+                    <label>PASSWORD</label>
+                    <input
+                        placeholder='Type your password'
+                        type='password'
+                        id='password'
+                        value={formik.values.password}
+                        onChange={formik.handleChange}
+                    />
+                    {formik.touched.password && formik.errors.password ? <Msg>All fields required</Msg> : null}
+                </div>
+                <div className={styles.element}>
+                    <label>REPEAT PASSWORD</label>
+                    <input
+                        placeholder='Repeat your password'
+                        type='password'
+                        id='repeatPassword'
+                        value={formik.values.repeatPassword}
+                        onChange={formik.handleChange}
+                    />
+                    {formik.touched.repeatPassword && formik.errors.repeatPassword ? <Msg>All fields required</Msg> : null}
+                </div>
+                {
+                    msg || formik.touched.name === '' ? (
+                        <>
+                            <div className={styles.notAllowed}>
+                                <Buttons.Button>Sign up</Buttons.Button>
+                            </div>
+                            <Msg>{msg}</Msg>
+                        </>
+                    ) : (
+                        <div onClick={formik.handleSubmit}>
+                                <Buttons.Button>Sign up</Buttons.Button>
                         </div>
-
-                        <Msg>{msg}</Msg>
-                    </>
-                ) : (
-                    <div onClick={formik.handleSubmit}>
-                            <Buttons.Button>Sign up</Buttons.Button>
-                    </div>
-                )
-            }
-
-        </form>
-        <Link href='/join/sign-in' className={styles.goToLogin} ref={aRef}>
-            <p>I already have an account</p>
-        </Link>
-    </>
-)
+                    )
+                }
+            </form>
+            <Link href='/join/sign-in' className={styles.goToLogin} ref={aRef}>
+                <p>I already have an account</p>
+            </Link>
+        </> 
+    )
 }
 
 export { FormSignUp }

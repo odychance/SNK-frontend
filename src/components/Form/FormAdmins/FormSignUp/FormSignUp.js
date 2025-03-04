@@ -10,7 +10,6 @@ import { useRouter } from 'next/router'
 import { gsap } from 'gsap'
 import Link from 'next/link'
 
-
 const FormSignUp = () => {
 
   const [ msg, setMsg ] = useState('')
@@ -19,14 +18,12 @@ const FormSignUp = () => {
   const router = useRouter()
   const formRef = useRef(null)
   const infoRef = useRef(null)
-
   
   const formik = useFormik({
     initialValues: InitialValues,
     validationSchema: ValidationSchema,
     onSubmit: async (values) => {
       const { name, lastname, email, repeatEmail, password, repeatPassword } = values
-
       try {
         if(email !== repeatEmail) {
           setMsg("Email fields don't match")
@@ -57,10 +54,7 @@ const FormSignUp = () => {
 
         setTimeout(() => {
           router.push('/join/admin/sign-in')
-          
         }, 2000);
-
-        
       } catch (error) {
         setMsg(error.message)
         setTimeout(() => {
@@ -71,27 +65,25 @@ const FormSignUp = () => {
   })
   
   useEffect(() => {
-
     const formel = formRef.current
     const infoel = infoRef.current
 
-    gsap.from(formel, {
+    gsap.set(formel, {
       x: 500,
       opacity: 0,
       duration: 1
-    }),
+    })
+    gsap.set(infoel, {
+      opacity: 0,
+      x: 100,
+      duration: 2
+    })
     gsap.to(formel, {
       x: 0,
       opacity: 1,
       duration: 1,
       delay: 1.5
-    }),
-
-    gsap.from(infoel, {
-      opacity: 0,
-      x: 100,
-      duration: 2
-    }),
+    })
     gsap.to(infoel, {
       x: 0,
       opacity: 1,
@@ -103,9 +95,7 @@ const FormSignUp = () => {
   return (
     <>
     <form className={styles.containerForm} type="submit" onSubmit={formik.handleSubmit} ref={formRef}>
-
       <h1>Admins register panel</h1>
-
       <div className={styles.elements}>
         <label>NAME</label>
         <input
@@ -114,10 +104,8 @@ const FormSignUp = () => {
           id='name'
           value={formik.values.name}
           onChange={formik.handleChange}
-          />
-
-          {formik.touched.name && formik.errors.name ? <Msg>All fields required</Msg> : null} 
-
+        />
+        {formik.touched.name && formik.errors.name ? <Msg>All fields required</Msg> : null} 
         <label>LASTNAME</label>
         <input
           placeholder='Type your lastname'
@@ -126,10 +114,7 @@ const FormSignUp = () => {
           value={formik.values.lastname}
           onChange={formik.handleChange}  
         />
-
-          {formik.touched.lastname && formik.errors.lastname ? <Msg>All fields required</Msg> : null} 
-
-        
+        {formik.touched.lastname && formik.errors.lastname ? <Msg>All fields required</Msg> : null} 
         <label>EMAIL</label>
         <input
           placeholder="Type your email"
@@ -138,9 +123,7 @@ const FormSignUp = () => {
           value={formik.values.email}
           onChange={formik.handleChange}  
         />
-
-          {formik.touched.email && formik.errors.email ? <Msg>All fields required</Msg> : null} 
-
+        {formik.touched.email && formik.errors.email ? <Msg>All fields required</Msg> : null} 
         <label>REPEAT EMAIL</label>
         <input
           placeholder='Repeat your email'
@@ -149,9 +132,7 @@ const FormSignUp = () => {
           value={formik.values.repeatEmail}
           onChange={formik.handleChange}
         />
-
-          {formik.touched.repeatEmail && formik.errors.repeatEmail ? <Msg>All fields required</Msg> : null} 
-
+        {formik.touched.repeatEmail && formik.errors.repeatEmail ? <Msg>All fields required</Msg> : null} 
         <label>PASSWORD</label>
         <input
           placeholder="Type your password"
@@ -160,9 +141,7 @@ const FormSignUp = () => {
           value={formik.values.password}
           onChange={formik.handleChange}  
         />
-
-          {formik.touched.password && formik.errors.password ? <Msg>All fields required</Msg> : null} 
-
+        {formik.touched.password && formik.errors.password ? <Msg>All fields required</Msg> : null} 
         <label>REPEAT PASSWORD</label>
         <input
           placeholder='Repeat your password'
@@ -171,9 +150,7 @@ const FormSignUp = () => {
           value={formik.values.repeatPassword}
           onChange={formik.handleChange}
         />
-
-          {formik.touched.repeatPassword && formik.errors.repeatPassword ? <Msg>All fields required</Msg> : null} 
-
+        {formik.touched.repeatPassword && formik.errors.repeatPassword ? <Msg>All fields required</Msg> : null} 
         <label>ADMIN PASSWORD</label>
         <input
           placeholder="Type the Admin password"
@@ -181,11 +158,9 @@ const FormSignUp = () => {
           id="adminPass"
           value={formik.values.adminPass}
           onChange={formik.handleChange}
-          />
+        />
       </div>
-
       {formik.touched.adminPass && formik.errors.adminPass ? <Msg>All fields required</Msg> : null} 
-
       { formik.values.adminPass !== "ody23897812" ? (
         <div className={styles.adminPassBtn} ref={infoRef}>
           <Buttons.Button>CREATE ADMIN ACC</Buttons.Button>
@@ -195,11 +170,9 @@ const FormSignUp = () => {
           <div className={styles.allowedBtn} onClick={formik.handleSubmit}>
             <Buttons.Button>CREATE ADMIN ACC</Buttons.Button>
           </div>
-
           <Msg>{msg}</Msg>
         </>
       )}
-      
         <Link href='/join/admin/sign-in' className={styles.goToLoginAdm} >
           <p> Im already an admin </p>
         </Link>

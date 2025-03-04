@@ -10,12 +10,10 @@ const SignUpAdmin = () => {
 
   useEffect(() => {
     const anim = imgRef.current
-
-    gsap.from(anim, {
+    gsap.set(anim, {
       x: -500,
-      scale: 1.9
+      scale: 1.9,
     })
-
     gsap.to(anim, {
       x: 0,
       duration: 2,

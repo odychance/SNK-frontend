@@ -6,10 +6,11 @@ gsap.registerPlugin(ScrollTrigger)
 const anim = ({ buttonRef, containerTargetRef }) => {
     const button = buttonRef?.current
     
-    gsap.fromTo(button, {
+    gsap.set(button, {
         y: 30,
         opacity: 0
-    }, {
+    })
+    gsap.to(button, {
         y: -20,
         opacity: 1,
         scrollTrigger: {
@@ -21,18 +22,16 @@ const anim = ({ buttonRef, containerTargetRef }) => {
             ease: "power1.easeOut",
         }
     })
-    
-    
     if(containerTargetRef?.current?.children !== undefined) {
         const containerTarget = [...containerTargetRef?.current?.children]
         containerTarget.forEach((el, i) => {
-
-            gsap.fromTo(el, {
+            gsap.set(el, {
                 x: i % 2 ? 100 : -100,
                 y: i % 2 ? 100 : -100,
                 opacity: 0,
 
-            }, {
+            })
+            gsap.to(el, {
                 x: 0,
                 y: 0,
                 opacity: 1,
@@ -47,10 +46,7 @@ const anim = ({ buttonRef, containerTargetRef }) => {
                 }
             })
         })
-    } else {
-        null
     }
-
 }
 
 export default anim

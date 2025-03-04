@@ -54,20 +54,19 @@ const FormSignIn = () => {
         const el = formRef.current
         const ael = aRef.current
 
-        gsap.from(el, {
+        gsap.set(el, {
             x: 200,
             opacity: 0,
-        }),
+        })
+        gsap.set(ael, {
+            x: 200,
+            opacity: 0,
+        })
         gsap.to(el ,{
             x: 0,
             duration: 1,
             opacity: 1,
-        }),
-
-        gsap.from(ael, {
-            x: 200,
-            opacity: 0,
-        }),
+        })
         gsap.to(ael, {
             x: 0,
             duration: 1,
@@ -79,7 +78,6 @@ const FormSignIn = () => {
     <>
         <form className={styles.containerForm} type="submit" onSubmit={formik.handleSubmit} ref={formRef}>
             <h1 className={styles.signin}>SIGN IN HERE!</h1>
-
             <div className={styles.element}>
                 <label>EMAIL</label>
                 <input
@@ -89,11 +87,8 @@ const FormSignIn = () => {
                     value={formik.values.email}
                     onChange={formik.handleChange}
                 />
-
                 {formik.touched.email && formik.errors.email ? <Msg>All fields is required</Msg> : null}
-
             </div>
-
             <div className={styles.element}>
                 <label>PASSWORD</label>
                 <input
@@ -103,19 +98,14 @@ const FormSignIn = () => {
                     value={formik.values.password}
                     onChange={formik.handleChange}
                 />
-
                 {formik.touched.password && formik.errors.password ? <Msg>All fields is required</Msg> : null}
-
             </div>
-
-
             {
                 msg || formik.touched.email === '' ? (
                     <>
                         <div className={styles.notAllowed}>
                             <Buttons.Button>Sign up</Buttons.Button>
                         </div>
-
                         <Msg>{msg}</Msg>
                     </>
                 ) : (
@@ -124,16 +114,14 @@ const FormSignIn = () => {
                     </div>
                 )
             }
-
         </form>
         <Link href='/join/sign-up' className={styles.goToRegister} ref={aRef}>
             <p>I have not an account</p>
         </Link>
-
         <Link href="/join/admin/sign-in" className={styles.joinAdminBtn}>
             <p>Login as Admin</p>
         </Link>
-</>
+    </>
 )
 }
 

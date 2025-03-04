@@ -6,11 +6,13 @@ gsap.registerPlugin(ScrollTrigger)
 const anim = ({titleRef, imgRef}) => {
     const title = titleRef.current
     const img = imgRef.current
+    const targets = [title, img].filter(el => el)
 
-    gsap.fromTo(title, {
+    gsap.set([title, img].filter(el => el), {
         opacity: 0,
-        y: -200
-    }, {
+        y: targets.length % 2 ? 200 : -200
+    })
+    gsap.to(title, {
         opacity: 1,
         y: 0,
         scrollTrigger: {
@@ -22,10 +24,8 @@ const anim = ({titleRef, imgRef}) => {
         }
     })
 
-    gsap.fromTo(img, {
-        opacity: 0,
-        y: 200
-    }, {
+
+    gsap.to(img, {
         opacity: 1,
         y: 0,
         scrollTrigger: {

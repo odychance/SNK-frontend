@@ -4,10 +4,11 @@ const anim = ({modalRef, stateModalTarget}) => {
     const modal = modalRef?.current
 
     if(stateModalTarget) {
-        gsap.fromTo(modal, {
+        gsap.set(modal, {
             opacity: 0,
             scale: 1.2,
-        }, {
+        })
+        gsap.to(modal, {
             opacity: 1,
             scale: 1,
             duration: .3,
@@ -16,10 +17,11 @@ const anim = ({modalRef, stateModalTarget}) => {
     } 
 
     if(!stateModalTarget) {
-        gsap.fromTo(modal, {
+        gsap.set(modal, {
             opacity: 1,
             scale: 1
-        }, {
+        })
+        gsap.to(modal, {
             opacity: 0,
             scale: 1.2,
             duration: .3,

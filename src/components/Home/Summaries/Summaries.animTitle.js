@@ -6,9 +6,8 @@ gsap.registerPlugin(ScrollTrigger)
 const animTitle = ({titleRef}) => {
     const title = titleRef.current
 
-    gsap.fromTo(title, {
-        opacity: 0
-    }, {
+    gsap.set(title, { opacity: 0 })
+    gsap.to(title, {
         opacity: 1,
         scrollTrigger: {
             trigger: title,

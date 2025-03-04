@@ -8,11 +8,21 @@ const animDivisions = ({militaryPoliceRef, scoutingLegionRef, stationaryGuardRef
     const militaryPolice = militaryPoliceRef.current
     const scoutingLegion = scoutingLegionRef.current
     const stationaryGuard = stationaryGuardRef.current
+    const targets = [militaryPolice, scoutingLegion, stationaryGuard].filter(el => el)
 
-    gsap.fromTo(militaryPolice, {
-        y: 100,
+    gsap.set(targets, {
         opacity: 0
-    }, {
+    })
+    gsap.set(militaryPolice, {
+        y: 100,
+    })
+    gsap.set(scoutingLegion, {
+        x: 100,
+    })
+    gsap.set(stationaryGuard, {
+        x: -100,
+    })
+    gsap.to(militaryPolice, {
         y: 0,
         opacity: 1,
         scrollTrigger: {
@@ -22,11 +32,7 @@ const animDivisions = ({militaryPoliceRef, scoutingLegionRef, stationaryGuardRef
             scrub: true,
         }
     })
-    
-    gsap.fromTo(scoutingLegion, {
-        x: 100,
-        opacity: 0
-    }, {
+    gsap.to(scoutingLegion, {
         x: 0,
         opacity: 1,
         scrollTrigger: {
@@ -36,11 +42,7 @@ const animDivisions = ({militaryPoliceRef, scoutingLegionRef, stationaryGuardRef
             scrub: true,
         }
     })
-
-    gsap.fromTo(stationaryGuard, {
-        x: -100,
-        opacity: 0
-    }, {
+    gsap.to(stationaryGuard, {
         x: 0,
         opacity: 1,
         scrollTrigger: {
@@ -50,7 +52,6 @@ const animDivisions = ({militaryPoliceRef, scoutingLegionRef, stationaryGuardRef
             scrub: true,
         }
     })
-
 }
 
 export default animDivisions

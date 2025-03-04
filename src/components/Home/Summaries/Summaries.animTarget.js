@@ -7,10 +7,11 @@ const animTarget = ({targetRef}) => {
     const target = [...targetRef.current.children]
 
     target.forEach((el, i) => {
-        gsap.fromTo(el, {
+        gsap.set(el, {
             opacity: 0,
             y: i % 2 === 0 ? -100 : 100
-        }, {
+        })
+        gsap.to(el, {
             opacity: 1,
             y: 0,
             delay: .3,

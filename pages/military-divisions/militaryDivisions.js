@@ -23,20 +23,21 @@ const MilitaryDivisionsPage = () => {
         const title = titleRef?.current?.children
         const img = imageRef?.current
 
-        gsap.fromTo(title, {
+        gsap.set(title, {
             x: 200,
             opacity: 0
-        }, {
+        })
+        gsap.set(img, {
+            scale: 1.2,
+            opacity: 0.1
+        })
+        gsap.to(title, {
             x: 0,
             opacity: 1,
             duration: 3,
             ease: "power4.easeInOut"
         })
-
-        gsap.fromTo(img, {
-            scale: 1.2,
-            opacity: 0.1
-        }, {
+        gsap.to(img, {
             scale: 1,
             opacity: .6,
             duration: 2,

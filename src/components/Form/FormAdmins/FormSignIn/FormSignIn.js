@@ -1,5 +1,4 @@
 import styles from './FormSignIn.module.scss'
-// import { Buttons } from '@/components/Shared/Buttonss/Buttons/Buttons'
 import { Msg, Buttons } from '@/components/Shared'
 import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
@@ -17,16 +16,12 @@ const FormSignIn = () => {
 
   const router = useRouter()
   const formRef = useRef(null)
-
   const formik = useFormik({
     initialValues: InitialValues,
     validationSchema: ValidationSchema,
     onSubmit: async values => {
-
       const { email, password } = values
-      
       try {
-        
         const data = await authenticateAdmin({
           variables: {
             input: {
@@ -37,31 +32,27 @@ const FormSignIn = () => {
         })
 
         const { token } = data.data.authenticateAdmin
-        // console.log(token)
         localStorage.setItem('token', token)
         
         setTimeout(() => {
           router.push('/')
         }, 2000);
-
       } catch (error) {
         setMsg(error.message)
         setTimeout(() => {
           setMsg('')
         }, 2000);
       }
-
     }
   })
 
   useEffect(() => {
     const el = formRef.current
-    gsap.from( el, {
+    gsap.set( el, {
       y: 0,
       opacity: 0,
       scale: 0.3,
     })
-
     gsap.to(el, {
       y: -700,
       opacity: 1,
@@ -75,7 +66,6 @@ const FormSignIn = () => {
     <>
       <form className={styles.formContainer} type='submit' onSubmit={formik.handleSubmit} ref={formRef}>
         <h1 className={styles.signIn}>LOGIN AS ADMIN!</h1>
-
         <div className={styles.elements}>
           <label>EMAIL</label>
           <input
@@ -85,12 +75,8 @@ const FormSignIn = () => {
             value={formik.values.email}
             onChange={formik.handleChange}
           />
-
         { formik.touched.email && formik.errors.email ? <Msg setMsg={true}>All fields required</Msg> : null}
-
         </div>
-
-
         <div className={styles.elements}>
           <label>PASSWORD</label>
           <input
@@ -100,26 +86,21 @@ const FormSignIn = () => {
             value={formik.values.password}
             onChange={formik.handleChange}
           />
-
         { formik.touched.password && formik.errors.password ? <Msg>All fields required</Msg> : null}
-
         </div>
-
       { msg || formik.values.email === '' || formik.values.password === '' ? (
           <>
             <div className={styles.notAllowed}>
               <Buttons.Button>LOGIN</Buttons.Button>
             </div>
-
             <Msg>{msg}</Msg>
           </>
         ) : (
-            <div onClick={formik.handleSubmit}>
-              <Buttons.Button>LOGIN</Buttons.Button>
-            </div>
+          <div onClick={formik.handleSubmit}>
+            <Buttons.Button>LOGIN</Buttons.Button>
+          </div>
         )
       }
-
         <Link href="/join/admin/sign-up" className={styles.goToRegisterAdm}>
           <p>Go to register an admin</p>
         </Link>

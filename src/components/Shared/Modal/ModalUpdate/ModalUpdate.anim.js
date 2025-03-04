@@ -5,18 +5,19 @@ const anim = ({containerRef, formRef, modalUpdate}) => {
     const form = formRef.current
 
     if(modalUpdate) {
-        gsap.fromTo(container, {
+        gsap.set(container, {
             opacity: 0,
             scale: 1.1
-        }, {
+        })
+        gsap.set(form, {
+            yPercent: -200
+        })
+        gsap.to(container, {
             opacity: 1,
             scale: 1,
             duration: .5
         })
-
-        gsap.fromTo(form, {
-            yPercent: -200
-        }, {
+        gsap.to(form, {
             yPercent: -50,
             ease: "back.inOut",
             duration: 1
@@ -25,25 +26,25 @@ const anim = ({containerRef, formRef, modalUpdate}) => {
     }
 
     if(!modalUpdate) {
-        gsap.fromTo(container, {
+        gsap.set(container, {
             opacity: 1,
             scale: 1
-        }, {
+        })
+        gsap.set(form, {
+            yPercent: -50
+        })
+        gsap.to(container, {
             opacity: 0,
             scale: 1.1,
             duration: .5
         })
-
-        gsap.fromTo(form, {
-            yPercent: -50
-        }, {
+        gsap.to(form, {
             yPercent: -200,
             ease: "power4.easeInOut",
             duration: 1
         })
         return
     }
-
 }
 
 export default anim

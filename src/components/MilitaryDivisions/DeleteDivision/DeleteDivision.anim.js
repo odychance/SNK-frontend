@@ -1,16 +1,15 @@
-import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 
 const anim = ({modalRef, modalDeleteDivision}) => {
-
     const modal = modalRef.current
 
     if(modalDeleteDivision) {
-        gsap.fromTo(modal, {
+        gsap.set(modal, {
             y: -100,
             opacity: 0,
             scale: 1.2
-        }, {
+        })
+        gsap.to(modal, {
             y: 0,
             opacity: 1,
             scale: 1,
@@ -18,11 +17,12 @@ const anim = ({modalRef, modalDeleteDivision}) => {
             ease: "power4.easeInOut",
         })
     } else {
-        gsap.fromTo(modal, {
+        gsap.set(modal, {
             y: 0,
             opacity: 1,
             scale: 1
-        }, {
+        })
+        gsap.to(modal, {
             y: 100,
             opacity: 0,
             scale: 1.2,
@@ -30,7 +30,6 @@ const anim = ({modalRef, modalDeleteDivision}) => {
             ease: "power4.easeInOut",
         })
     }
-
 }
 
 export default anim

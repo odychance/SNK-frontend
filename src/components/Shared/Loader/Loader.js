@@ -12,33 +12,25 @@ const Loader = () => {
         const loader = loadingRef.current
 
         const handleRouteChange = () => {
-            gsap.fromTo(loader, {
-                top: "-200vh"
-            }, {
+            gsap.set(loader, { top: "-200vh" })
+            gsap.to(loader, {
                 top: "-18vh",
                 duration: 1
             })
-            
             setTimeout(() => {
-                gsap.fromTo(loader, {
-                    top: "-18vh"
-                }, {
+                gsap.set(loader, { top: "-18vh" })
+                gsap.to(loader, {
                     top: "-200vh",
                     duration: 1
                 })
             }, 2000);
-
-
-            
         }
         router.events.on("routeChangeStart", handleRouteChange)
 
         return () => {
             router.events.off("routeChangeStart", handleRouteChange)
         }
-
     }, [])
-
 
   return (
     <div className={styles.containerLoader} ref={loadingRef}>
