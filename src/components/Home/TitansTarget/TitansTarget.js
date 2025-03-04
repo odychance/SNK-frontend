@@ -3,6 +3,7 @@ import styles from './titansTarget.module.scss'
 import { Buttons } from '@/components/Shared'
 import anim from './TitansTarget.anim'
 import animImg from './TitansTarget.animImg'
+import Link from 'next/link'
 
 const TitansTarget = () => {
 
@@ -45,9 +46,9 @@ const TitansTarget = () => {
             <img src='https://images5.alphacoders.com/120/1203843.png' alt='background image' className={styles.backroungImage}/>
         </div>
 
-        <a href="/titans" className={styles.refButton}>
+        <Link href="/titans" className={styles.refButton}>
             <Buttons.WatchMoreBtn text="LOOK AT TITANS!" />
-        </a>
+        </Link>
     </div>
   )
 }

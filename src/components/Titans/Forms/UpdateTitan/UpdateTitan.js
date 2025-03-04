@@ -120,7 +120,7 @@ const UpdateTitan = ({ updateTitanModal, openCloseModalUpdate, titanInfo }) => {
                 />
             </div>
             <div onClick={formik.handleSubmit}>
-                <Buttons.Button children="Update Now" />
+                <Buttons.Button>Update Now</Buttons.Button>
             </div>
         </form>
 

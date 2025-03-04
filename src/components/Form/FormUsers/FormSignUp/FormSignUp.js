@@ -106,7 +106,7 @@ const FormSignUp = () => {
                     onChange={formik.handleChange}
                 />
 
-                {formik.touched.name && formik.errors.name ? <Msg children="All fields is required" setMsg={true} /> : null}
+                {formik.touched.name && formik.errors.name ? <Msg setMsg={true} >All fields required</Msg> : null}
 
             </div>
             <div className={styles.element}>
@@ -119,7 +119,7 @@ const FormSignUp = () => {
                     onChange={formik.handleChange}
                 />
 
-                {formik.touched.lastname && formik.errors.lastname ? <Msg children="All fields is required"/> : null}
+                {formik.touched.lastname && formik.errors.lastname ? <Msg>All fields required</Msg> : null}
 
             </div>
 
@@ -133,7 +133,7 @@ const FormSignUp = () => {
                     onChange={formik.handleChange}
                 />
 
-                {formik.touched.email && formik.errors.email ? <Msg children="All fields is required"/> : null}
+                {formik.touched.email && formik.errors.email ? <Msg>All fields required</Msg> : null}
 
             </div>
 
@@ -147,7 +147,7 @@ const FormSignUp = () => {
                     onChange={formik.handleChange}
                 />
 
-                {formik.touched.repeatEmail && formik.errors.repeatEmail ? <Msg children="All fields is required"/> : null}
+                {formik.touched.repeatEmail && formik.errors.repeatEmail ? <Msg>All fields required</Msg> : null}
 
             </div>
 
@@ -161,7 +161,7 @@ const FormSignUp = () => {
                     onChange={formik.handleChange}
                 />
 
-                {formik.touched.password && formik.errors.password ? <Msg children="All fields is required"/> : null}
+                {formik.touched.password && formik.errors.password ? <Msg>All fields required</Msg> : null}
 
             </div>
 
@@ -175,21 +175,21 @@ const FormSignUp = () => {
                     onChange={formik.handleChange}
                 />
 
-                {formik.touched.repeatPassword && formik.errors.repeatPassword ? <Msg children="All fields is required" /> : null}
+                {formik.touched.repeatPassword && formik.errors.repeatPassword ? <Msg>All fields required</Msg> : null}
             </div>
 
             {
                 msg || formik.touched.name === '' ? (
                     <>
                         <div className={styles.notAllowed}>
-                            <Buttons.Button children="Sign up"/>
+                            <Buttons.Button>Sign up</Buttons.Button>
                         </div>
 
-                        <Msg children={msg} />
+                        <Msg>{msg}</Msg>
                     </>
                 ) : (
                     <div onClick={formik.handleSubmit}>
-                            <Buttons.Button children="Sign up" />
+                            <Buttons.Button>Sign up</Buttons.Button>
                     </div>
                 )
             }

@@ -55,7 +55,7 @@ const CreateTitan = ({panelCreate, titanInfo}) => {
     return (
         <div className={classNames(styles.formContainer, { [styles.formActive] : panelCreate})}>
 
-            <Msg children={message} />
+            <Msg>{message}</Msg>
 
             <form
                 onSubmit={formik.handleSubmit}
@@ -124,7 +124,7 @@ const CreateTitan = ({panelCreate, titanInfo}) => {
                 </div>
 
                 <div onClick={formik.handleSubmit}>
-                    <Buttons.Button children="Add Now" />
+                    <Buttons.Button>Add Now</Buttons.Button>
                 </div>
             </form>
         </div>

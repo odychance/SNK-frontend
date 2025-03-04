@@ -86,7 +86,7 @@ const FormSignIn = () => {
             onChange={formik.handleChange}
           />
 
-        { formik.touched.email && formik.errors.email ? <Msg children="All fields required" setMsg={true}/> : null}
+        { formik.touched.email && formik.errors.email ? <Msg setMsg={true}>All fields required</Msg> : null}
 
         </div>
 
@@ -101,17 +101,17 @@ const FormSignIn = () => {
             onChange={formik.handleChange}
           />
 
-        { formik.touched.password && formik.errors.password ? <Msg children="All fields required" /> : null}
+        { formik.touched.password && formik.errors.password ? <Msg>All fields required</Msg> : null}
 
         </div>
 
       { msg || formik.values.email === '' || formik.values.password === '' ? (
           <>
             <div className={styles.notAllowed}>
-              <Buttons.Button children="LOGIN"/>
+              <Buttons.Button>LOGIN</Buttons.Button>
             </div>
 
-            <Msg children={msg}/>
+            <Msg>{msg}</Msg>
           </>
         ) : (
             <div onClick={formik.handleSubmit}>

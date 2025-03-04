@@ -42,7 +42,7 @@ const FocusedTitan = ({ titanInfo, setTitanInfo, admin }) => {
                         <p>{titanInfo?.host}</p>
                     </h1>
 
-                    <h1>What's that's special skill?
+                    <h1>What&pos;s that&apos;s special skill?
                         <p>{titanInfo?.skill}</p>
                     </h1>
 

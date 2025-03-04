@@ -23,18 +23,20 @@ const TitansPage = () => {
     const animRef = useRef(null)
     const animation = animRef?.current
     
-        const anim = () => {
-            gsap.fromTo( animation, {
-                opacity: 0
-            }, {
-                opacity: .8,
-                duration: 3
-            })
-        }
-    
-        useEffect(() => {
+    const anim = () => {
+        gsap.fromTo( animation, {
+            opacity: 0
+        }, {
+            opacity: .8,
+            duration: 3
+        })
+    }
+
+    useEffect(() => {
+        if(animRef.current !== null) {
             anim()
-        }, [animRef.current !== null])
+        }
+    }, [animRef.current])
 
 
   return (

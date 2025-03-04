@@ -20,7 +20,7 @@ const Titans = ({ dataUser, dataAdmin, loadingUser, loadingAdmin, dataTitans}) =
     <>
         <div className={styles.btnAdd} onClick={() => activePanel()}>
             { admin !== "si" ? null : (
-                <Buttons.Button children={panelCreate ? "cancel" : "add titan"}/>
+                <Buttons.Button>{panelCreate ? "cancel" : "add titan"}</Buttons.Button>
             )}
         </div>
 

@@ -98,7 +98,7 @@ const ModalCreateTarget = ({stateModal, openCloseModal}) => {
         </div>
 
         <div>
-          <label>What's his(er) story? *</label>
+          <label>What&apos;s his(er) story? *</label>
           <input
             placeholder='Type some information about that character'
             type='text'
@@ -120,15 +120,15 @@ const ModalCreateTarget = ({stateModal, openCloseModal}) => {
         </div>
 
         <div onClick={formik.handleSubmit} className={styles.btnCreate}>
-          <Buttons.Button children="Create character"/>
+          <Buttons.Button>Create character</Buttons.Button>
         </div>
 
-        {formik.touched.name && formik.errors.name || formik.touched.skills && formik.errors.skills || formik.touched.history && formik.errors.history || formik.touched.picture && formik.errors.picture ? <Msg children="Some field are required"/> : null}
+        {formik.touched.name && formik.errors.name || formik.touched.skills && formik.errors.skills || formik.touched.history && formik.errors.history || formik.touched.picture && formik.errors.picture ? <Msg>Some field are required</Msg> : null}
 
       </form>
       
 
-      <Msg children={message} />
+      <Msg>{message}</Msg>
     </div>
   )
 }

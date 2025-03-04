@@ -1,6 +1,5 @@
 import styles from './FormSignUp.module.scss'
 import { Buttons } from '@/components/Shared'
-// import Alert from '@/components/Alert/Alert'
 import { Msg } from '@/components/Shared'
 import { useEffect, useState, useRef } from 'react'
 import { useMutation } from '@apollo/client'
@@ -105,7 +104,7 @@ const FormSignUp = () => {
     <>
     <form className={styles.containerForm} type="submit" onSubmit={formik.handleSubmit} ref={formRef}>
 
-      <h1>Admin's register panel</h1>
+      <h1>Admins register panel</h1>
 
       <div className={styles.elements}>
         <label>NAME</label>
@@ -117,7 +116,7 @@ const FormSignUp = () => {
           onChange={formik.handleChange}
           />
 
-          {formik.touched.name && formik.errors.name ? <Msg children="All fields requirel"/> : null} 
+          {formik.touched.name && formik.errors.name ? <Msg>All fields required</Msg> : null} 
 
         <label>LASTNAME</label>
         <input
@@ -128,7 +127,7 @@ const FormSignUp = () => {
           onChange={formik.handleChange}  
         />
 
-          {formik.touched.lastname && formik.errors.lastname ? <Msg children="All fields requirel"/> : null} 
+          {formik.touched.lastname && formik.errors.lastname ? <Msg>All fields required</Msg> : null} 
 
         
         <label>EMAIL</label>
@@ -140,7 +139,7 @@ const FormSignUp = () => {
           onChange={formik.handleChange}  
         />
 
-          {formik.touched.email && formik.errors.email ? <Msg children="All fields requirel"/> : null} 
+          {formik.touched.email && formik.errors.email ? <Msg>All fields required</Msg> : null} 
 
         <label>REPEAT EMAIL</label>
         <input
@@ -151,7 +150,7 @@ const FormSignUp = () => {
           onChange={formik.handleChange}
         />
 
-          {formik.touched.repeatEmail && formik.errors.repeatEmail ? <Msg children="All fields requirel"/> : null} 
+          {formik.touched.repeatEmail && formik.errors.repeatEmail ? <Msg>All fields required</Msg> : null} 
 
         <label>PASSWORD</label>
         <input
@@ -162,7 +161,7 @@ const FormSignUp = () => {
           onChange={formik.handleChange}  
         />
 
-          {formik.touched.password && formik.errors.password ? <Msg children="All fields requirel"/> : null} 
+          {formik.touched.password && formik.errors.password ? <Msg>All fields required</Msg> : null} 
 
         <label>REPEAT PASSWORD</label>
         <input
@@ -173,7 +172,7 @@ const FormSignUp = () => {
           onChange={formik.handleChange}
         />
 
-          {formik.touched.repeatPassword && formik.errors.repeatPassword ? <Msg children="All fields requirel"/> : null} 
+          {formik.touched.repeatPassword && formik.errors.repeatPassword ? <Msg>All fields required</Msg> : null} 
 
         <label>ADMIN PASSWORD</label>
         <input
@@ -185,24 +184,24 @@ const FormSignUp = () => {
           />
       </div>
 
-      {formik.touched.adminPass && formik.errors.adminPass ? <Msg children="All fields requirel"/> : null} 
+      {formik.touched.adminPass && formik.errors.adminPass ? <Msg>All fields required</Msg> : null} 
 
       { formik.values.adminPass !== "ody23897812" ? (
         <div className={styles.adminPassBtn} ref={infoRef}>
-          <Buttons.Button children="CREATE ADMIN ACC" />
+          <Buttons.Button>CREATE ADMIN ACC</Buttons.Button>
         </div>
       ) : (
         <>
           <div className={styles.allowedBtn} onClick={formik.handleSubmit}>
-            <Buttons.Button children="CREATE ADMIN ACC"/>
+            <Buttons.Button>CREATE ADMIN ACC</Buttons.Button>
           </div>
 
-          <Msg children={msg}/>
+          <Msg>{msg}</Msg>
         </>
       )}
       
         <Link href='/join/admin/sign-in' className={styles.goToLoginAdm} >
-          <p> I'm already an admin </p>
+          <p> Im already an admin </p>
         </Link>
     </form>
     </>

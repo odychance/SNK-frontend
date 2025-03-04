@@ -85,7 +85,7 @@ const ModalUpdate = ({ dataTarget, setDataTarget, modalUpdate, setModalUpdate })
         <img src="https://i.pinimg.com/originals/1a/0d/42/1a0d42e6862ea5fe5a5a5587050e18aa.png" />
 
         <div>
-          <label>Let's edit name?</label>
+          <label>Let&apos;s edit name?</label>
           <input
             placeholder='Ej. Eren Yaegar'
             type="text"
@@ -97,7 +97,7 @@ const ModalUpdate = ({ dataTarget, setDataTarget, modalUpdate, setModalUpdate })
         </div>
 
         <div>
-          <label>Have another titan's name?</label>
+          <label>Have another titan&apos;s name?</label>
           <input
             placeholder='Ej. Attack titan'
             type="text"
@@ -145,7 +145,7 @@ const ModalUpdate = ({ dataTarget, setDataTarget, modalUpdate, setModalUpdate })
         </div>
 
         <div onClick={formik.handleSubmit} className={styles.btnUpdate}>
-          <Buttons.Button children="Update character"/>
+          <Buttons.Button>Update character</Buttons.Button>
         </div>
 
       </form>

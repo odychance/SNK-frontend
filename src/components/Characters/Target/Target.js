@@ -20,9 +20,12 @@ const Target = ({data, dataUser, loading, dataAdmin, loadingAdmin}) => {
   const admin = dataAdmin?.getAdmin?.admin
   
   const targetRef = useRef(null)
+
   useEffect(() => {
+    if(!loading && targetRef.current?.children) {
       anim({targetRef})
-  }, [!loading && targetRef.children])
+    }
+  }, [loading, targetRef.current])
 
 
   const openCloseDeleteModal = () => {
@@ -88,15 +91,11 @@ const Target = ({data, dataUser, loading, dataAdmin, loadingAdmin}) => {
       }
 
         { loadingAdmin ? null : (
-          admin === "si" ? (
-            
+          admin === "si" && (
             <div className={styles.modalBtn} onClick={openCloseModal}>
-              <Buttons.Button children="NEW CHARACTER" />
+              <Buttons.Button>NEW CHARACTER</Buttons.Button>
             </div>
-
-          ) : 
-          null
-          )}
+          ))}
 
         <Modal.ModalDeleteConfirm modalDeleteConfirm={modalDeleteConfirm} setModalDeleteConfirm={setModalDeleteConfirm} data={modalInfo} openCloseDeleteModal={openCloseDeleteModal}/>
         <Modal.ModalTarget data={modalInfo} dataAdmin={dataAdmin} openCloseTargetModal={openCloseTargetModal} stateModalTarget={stateModalTarget} admin={admin}/>

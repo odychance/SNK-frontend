@@ -55,7 +55,7 @@ const CreateDivision = ({ createModal }) => {
     <div className={classNames(styles.containerModal, { [ styles.modalActived ] : createModal })}>
     
         <div className={styles.containerMsg}>
-            <Msg children={message} />
+            <Msg>{message}</Msg>
         </div>
 
         <form
@@ -105,7 +105,7 @@ const CreateDivision = ({ createModal }) => {
             </div>
 
             <div className={styles.containerBtn} onClick={formik.handleSubmit} type="submit">
-                <Buttons.Button children="Add Now" />
+                <Buttons.Button>Add Now</Buttons.Button>
             </div>
         </form>
     </div>

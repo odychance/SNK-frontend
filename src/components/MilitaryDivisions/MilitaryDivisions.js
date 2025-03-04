@@ -61,7 +61,7 @@ const MilitaryDivisions = ({ admin }) => {
         { admin !== "si" ? null : (
             <>
                 <div className={styles.buttonAdd} onClick={openCreateModal} ref={buttonRef}>
-                    <Buttons.Button  children={!createModal ? "ADD DIVISiON" : "CANCEL"}/>
+                    <Buttons.Button>{!createModal ? "ADD DIVISiON" : "CANCEL"}</Buttons.Button>
                 </div>
 
                 <CreateDivision openCreateModal={openCreateModal} createModal={createModal} dataMD={dataMD}/>

@@ -102,7 +102,7 @@ const UpdateDivision = ({ modalUpdateDivision, focusedTarget, showModalUpdate })
             </div>
 
             <div className={styles.containerSubmitBtn} onClick={formik.handleSubmit}>
-                <Buttons.Button children="Update now" />
+                <Buttons.Button>Update now</Buttons.Button>
             </div>  
         </form>
 
