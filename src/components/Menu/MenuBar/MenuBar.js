@@ -43,7 +43,7 @@ const MenuBar = ({switchActive}) => {
         </Link>
       </div>
       <div className={styles.containerElements}>
-        <Link href='/summarys'>
+        <Link href='/summaries'>
           <p className={styles.text}>Summary of anime</p>
           <div className={styles.imgWrapper}>
             <img src="https://cdn.alfabetajuega.com/alfabetajuega/2021/04/Historia-de-Ymir-Fritz.jpg" alt="" className={styles.img}/>

@@ -1,7 +1,7 @@
 import Layout from '@/components/Layout/Layout'
 import NotFound from '@/components/NotFound'
 
-const Summarys = () => {
+const Summaries = () => {
   return (
     <>
       <Layout>
@@ -11,4 +11,4 @@ const Summarys = () => {
   )
 }
 
-export default Summarys
+export default Summaries
