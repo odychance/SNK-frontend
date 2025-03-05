@@ -1,0 +1,33 @@
+@import '/src/scss/index.scss';
+
+.containerComponent {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin-top: -100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  text-align: center;
+  font-family: Stardom;
+  font-size: 4vw;
+  letter-spacing: 1.5vw;
+  text-transform: uppercase;
+  z-index: 1;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 1));
+}
+
+.bgImage {
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(80%);
+  border-radius: 200px;
+  mask-image: radial-gradient(circle, rgba($background-primary, 0.9) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 80%);
+  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 80%);
+
+}
+
