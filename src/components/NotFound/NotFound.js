@@ -3,10 +3,10 @@ import styles from './styles.module.scss'
 import Image from 'next/image'
 import YmirBg from '/public/Media/Images/ymirBg.jpg'
 
-const NotFound = () => {
+const NotFound = ({textPage = "page currently <br/>under maintenance."}) => {
   return (
     <div className={styles.containerComponent}>
-      <p className={styles.text}>page currently <br/>under maintenance.</p>
+      <div className={styles.text} dangerouslySetInnerHTML={{ __html: textPage }} />
       <Image src={YmirBg} alt='ymir' className={styles.bgImage} />
     </div>
   )
